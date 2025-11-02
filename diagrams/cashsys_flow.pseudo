@@ -1,0 +1,50 @@
+flowchart TD
+    %% Define Shapes
+    subgraph Legend
+        A1([Process])
+        B1{Decision}
+        C1[Start/End]
+        D1[/Manual Input/]
+        E1[(Data Store)]
+    end
+
+    %% START
+    S([Start])
+    S --> P1[/Submit Personal Info/]
+    P1 --> PROC1[Validating Information]
+
+    %% Validation & Login
+    PROC1 --> D1{Returning Customer?}
+    D1 -- No --> PROC2[Store Personal Info\n(Personal Information DS)]
+    D1 -- Yes --> PROC3[Submit Login Information]
+    PROC2 --> PROC3
+
+    PROC3 --> DS1[(Log in credentials)]
+    DS1 --> PROC4[Login Process]
+    PROC4 --> D2{Credentials Valid?}
+    D2 -- No --> PROC3
+    D2 -- Yes --> PROC5[Submit Order Details]
+
+    %% Order & Inventory
+    PROC5 --> PROC6[Order Process]
+    PROC6 --> DS2[(Orders)]
+    DS2 --> PROC7[Checks Product Availability]
+    PROC7 --> DS3[(Products)]
+    DS3 --> PROC8[Inventory Portal]
+    PROC8 --> D3{Product Available?}
+
+    %% Sales & Payment
+    D3 -- Yes --> PROC9[Transmits Payment and Tax Calculation]
+    PROC9 --> PROC10[Sales Portal]
+    PROC10 --> PROC11[Calculate Total and VAT]
+    PROC11 --> PROC12[Process Order Payment\n& Generate Receipt]
+
+    %% Confirmation
+    PROC12 --> PROC13[Order Portal]
+    PROC13 --> PROC14[Admin Confirms Order]
+    PROC14 --> PROC15[Submit Order Confirmation]
+    PROC15 --> END([End Transaction])
+
+    %% Rejection Path
+    D3 -- No --> PROC16[Notify Order Process:\nOrder Cannot Be Completed]
+    PROC16 --> END
