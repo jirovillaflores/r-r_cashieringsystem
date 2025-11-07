@@ -1,0 +1,67 @@
+* {
+    margin: 12;
+    padding: 12;
+}
+
+body {
+
+}
+
+.d {
+    a d1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+}}
+
+img {
+    width: 40;
+    height: 40;
+    margin-right: 10px;
+}
+
+.s {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 20%;
+    max-width: 100px;
+
+
+h1 f {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+.check-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }    
+     
+.btn-click submit {
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+}
+
+}
+
+.que {
+    text-align: center;
+    font-size: 14px;
+}

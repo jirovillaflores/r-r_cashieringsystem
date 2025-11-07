@@ -50,7 +50,7 @@
     </script> -->
    <!-- <?php
 session_start();
-include('db_connect.php'); // Database connection file
+include('login.php'); // Database connection file
 
 // Handle login submission
 if (isset($_POST['submit'])) {
@@ -93,20 +93,20 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
-      <a href="#" style="display: flex; align-items: center; font-size: 24px; font-weight: 600; margin-bottom: 20px; text-decoration: none; color: black;">
-          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" width="40" height="40" style="margin-right: 10px;">
+<div class="d">
+      <a href="#" class="d1">
+          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
           Flowbite
       </a>
 
-      <div style="background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 30px; width: 100%; max-width: 400px;">
-          <h1 style="font-size: 22px; font-weight: bold; text-align: center;">Sign in to your account</h1>
+      <div class="s">
+          <h1 class="f">Sign in to your account</h1>
 
           <?php if (isset($error)): ?>
               <p style="color: red; text-align: center;"><?php echo $error; ?></p>
           <?php endif; ?>
 
-          <form action="" method="POST" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+          <form action="" method="POST" class="form">
               <div>
                   <label for="email">Your email</label><br>
                   <input type="email" name="email" id="email" placeholder="name@company.com" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
@@ -117,14 +117,14 @@ if (isset($_POST['submit'])) {
                   <input type="password" name="password" id="password" placeholder="••••••••" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
               </div>
 
-              <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="check-box">
                   <label><input type="checkbox" name="remember"> Remember me</label>
                   <a href="#" style="font-size: 14px;">Forgot password?</a>
               </div>
 
-              <button type="submit" name="submit" style="padding: 10px; background-color: #2563eb; color: white; border: none; border-radius: 5px; cursor: pointer;">Sign in</button>
+              <button class="btn-click" name="submit" a href="home.php">Sign in</a></button>
 
-              <p class="text-align: center; font-size: 14px;">
+              <p class="que">
                   Don’t have an account yet?
                   <a href="register.php" style="color: #2563eb; text-decoration: none;">Sign up</a>
               </p>
