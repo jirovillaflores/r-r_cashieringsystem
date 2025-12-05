@@ -29,7 +29,6 @@ class Users extends Dbh
         }
     }
   
-
     public function login($email, $pass) {
     session_start();
 
@@ -63,7 +62,7 @@ class Users extends Dbh
     }
     }
 
-    public function bookNow($add, $contact, $userId, $orderId) {
+    public function bookNow($add, $contact, $userId) {
     $stmt = $this->connect()->prepare("INSERT INTO orders (order_id, user_id, quantity, total_amount, status, address, contact) VALUES (?, ?, ?, ?, 'pending', ?, ?)");
     $stmt->bind_param('s', $email);
     $stmt->execute();
@@ -76,7 +75,7 @@ class Users extends Dbh
     }
 }
 
-     public function userOrders($id) {
+     public function UserOrders($id) {
 
     $conn = $this->connect();
     if (!$conn) {

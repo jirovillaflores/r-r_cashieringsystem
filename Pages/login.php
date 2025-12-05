@@ -18,7 +18,7 @@
     </dialog>
     
 
-    <button class="btn"onclick="my_modal_2.showModal()">Login</button>    
+    <button class="btn" onclick="my_modal_2.showModal()">Login</button>    
     </div>
 
 

@@ -8,7 +8,7 @@
             let email = $('#email').val();
             let password = $('#pass').val();
 
-            alert("Your email is :" + email + " and your password is " + password)
+            alert("Your email is :" + email + " and your password is " + password);
 
             $.ajax({
                 url: '../handlers/signup.php',
@@ -59,6 +59,36 @@ let password = $('#pass').val();
                 }
             })
         })
+    })
+
+$('.--btn-add-item').on('click',function(e){
+e.preventDefault();
+let email=$('#email').val();
+let password = $('#pass').val();
+
+
+            $.ajax({
+                url: '../handlers/login.php',
+                method: "post",
+                data: {
+                    'login': true,
+                    'email': email,
+                    'pass': password
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.redirect) {
+                        window.location.href=response.redirect;
+                    } else {
+                        alert(response.error)
+                    }
+                },
+                error: function(xhr, response) {
+                    console.log(xhr + response)
+                }
+            })
+        })
     });
+    
 </script>
 </html>

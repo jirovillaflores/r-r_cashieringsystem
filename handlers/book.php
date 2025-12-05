@@ -3,10 +3,9 @@ include('../Classes/Client.php');
 $clients = new Users();
 
 if (isset($_POST['book_now'])) {
-        $add = $_POST['add'];
+        $add = $_POST['address'];
         $contact = $_POST['contact'];
-        $userId = $_POST['userId'];
-        $roomId = $_POST['roomId'];
+        $userId = $_POST['user_id'];
         $amount = $_POST['amount'];
 
     // VALIDATIONS
